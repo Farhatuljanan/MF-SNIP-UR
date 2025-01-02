@@ -1026,21 +1026,19 @@ for iUB in No_UB:
 Mean_in_sample=np.mean(Obj_Val_UB_HM_in_sample)
 Standard_Deviation_in_sample=np.std(Obj_Val_UB_HM_in_sample)
 Mean_out_of_sample=np.mean(Obj_Val_UB_HM_out_of_sample)
-Standard_Deviation_out_of_sample=np.std(Obj_Val_UB_HM_out_of_sample)
-ElapTimeUB_M1=pd.DataFrame(elapsed_time_Replica1_out_of_sample)
-  
+Standard_Deviation_out_of_sample=np.std(Obj_Val_UB_HM_out_of_sample)  
 ElapTimeUB_M1=pd.DataFrame(elapsed_time_Replica1_out_of_sample)
 file_path = 'elapTimeUB_Base1_HeuCap_out_of_sample_1(n,10_M,25(5000)).xlsx'
 #ElapTimeUB_M1.to_excel(file_path, index=False)
-
 Ob_UB_M1=pd.DataFrame(Obj_Val_UB_HM_out_of_sample)
 file_path = 'ObjUB_Base1_HeuCap_out_of_sample_1(n,10_M,25(5000)).xlsx'
-Ob_UB_M1.to_excel(file_path, index=False)
-
+#Ob_UB_M1.to_excel(file_path, index=False)
 ElapTimeUB_M1=pd.DataFrame(elapsed_time_Replica1_in_sample)
 file_path = 'elapTimeUB_Base1_HeuCap_in_sample_1(n,10_M,25).xlsx'
 #ElapTimeUB_M1.to_excel(file_path, index=False)
-
 Ob_UB_M1=pd.DataFrame(Obj_Val_UB_HM_in_sample)
 file_path = 'ObjUB_Base1_HeuCap_in_sample_1(n,10_M,25).xlsx'
-Ob_UB_M1.to_excel(file_path, index=False)
+#Ob_UB_M1.to_excel(file_path, index=False)
+Stability_Tests=pd.DataFrame({'Mean_in_sample': [Mean_in_sample], 'Standard_Deviation_in_sample': [Standard_Deviation_in_sample], 'Mean_out_of_sample':[Mean_out_of_sample],'Standard_Deviation_out_of_sample':[Standard_Deviation_out_of_sample]})
+f_p='Stability Tests.xlsx'
+Stability_Tests.to_excel(f_p, index=False)  
