@@ -967,8 +967,6 @@ for iUB in No_UB:
     m_in.addConstrs(v[i,j,s]<= delta[i,j,s] for i,j in AR.edges for s in S5)
     m_in.addConstrs(v[i,j,s]<= phi[i,j,s] for i,j in AR.edges for s in S5)
     m_in.addConstrs(v[i,j,s]>= delta[i,j,s] + phi[i,j,s] - 1 for i,j in AR.edges for  s in S5)
-    
-    
      #m.addConstr(gp.quicksum(z[i,j]* A[i][j]['Resource'] for i,j in A.edges) <=60)
     
  # Optimize the model
@@ -1007,3 +1005,6 @@ file_path = 'elapTimeUB_Base3_HeuCap_in_sample_1(n,10_M,25).xlsx'
 Ob_UB_M1=pd.DataFrame(Obj_Val_UB_HM_in_sample)
 file_path = 'ObjUB_Base3_HeuCap_in_sample_1(n,10_M,25).xlsx'
 #Ob_UB_M1.to_excel(file_path, index=False)
+Stability_Tests=pd.DataFrame({'Mean_in_sample': [Mean_in_sample], 'Standard_Deviation_in_sample': [Standard_Deviation_in_sample], 'Mean_out_of_sample':[Mean_out_of_sample],'Standard_Deviation_out_of_sample':[Standard_Deviation_out_of_sample]})
+f_p='Stability Tests.xlsx'
+Stability_Tests.to_excel(f_p, index=False)  
