@@ -1016,7 +1016,9 @@ Ob_UB_M1=pd.DataFrame(Obj_Val_FP_out_of_sample)
 file_path = 'ObjUB_Base2_Heu_in_sample_in_FP_Class2(n,10_M,25).xlsx'
 #Ob_UB_M1.to_excel(file_path, index=False)
   #  aR=aR+T
-
+Stability_Tests=pd.DataFrame({'Mean_in_sample': [Mean_in_sample], 'Standard_Deviation_in_sample': [Standard_Deviation_in_sample], 'Mean_out_of_sample':[Mean_out_of_sample],'Standard_Deviation_out_of_sample':[Standard_Deviation_out_of_sample]})
+f_p='Stability Tests.xlsx'
+Stability_Tests.to_excel(f_p, index=False)  
     
 
 
